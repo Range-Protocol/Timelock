@@ -14,11 +14,11 @@ async function main() {
     
     let TimelockController = await ethers.getContractFactory("TimelockController");
     TimelockController = TimelockController.connect(ledger);
-    const MIN_DELAY = 86400;
+    const MIN_DELAY = 1;
     const PROPOSERS = [
       "0xb5020eC695b256b0F813547189B523c267737d46"
     ];
-    const EXECUTORS = [];
+    const EXECUTORS = ["0x0000000000000000000000000000000000000000"];
     const admin = "0x0000000000000000000000000000000000000000";
     const timelockController = await TimelockController.deploy(
       MIN_DELAY,
